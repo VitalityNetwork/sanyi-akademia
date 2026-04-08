@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Cap band (the part that goes around the head) -->
+  <path d="M14 34 Q14 44 32 44 Q50 44 50 34 L50 30 L14 30 Z" fill="#1d4ed8" stroke="#0f1d4f" stroke-width="0.5"/>
+
+  <!-- Inner shadow on the band -->
+  <path d="M14 34 Q14 38 32 38 Q50 38 50 34 L50 32 L14 32 Z" fill="#1e3a8a" opacity="0.6"/>
+
+  <!-- Mortarboard (square top viewed in perspective — diamond shape) -->
+  <path d="M32 12 L60 28 L32 36 L4 28 Z" fill="#2563eb" stroke="#dc2626" stroke-width="1.2"/>
+
+  <!-- Subtle highlight on mortarboard -->
+  <path d="M32 14 L56 28 L32 32 L8 28 Z" fill="#3b82f6" opacity="0.35"/>
+
+  <!-- Center button on top of cap -->
+  <circle cx="32" cy="28" r="2.6" fill="#f59e0b" stroke="#c47d00" stroke-width="0.4"/>
+
+  <!-- Tassel cord (curving from button to right side) -->
+  <path d="M32 28 Q42 30 47 38" stroke="#f59e0b" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+  <!-- Tassel bundle (3 strands) -->
+  <line x1="47" y1="38" x2="46" y2="48" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="47" y1="38" x2="48" y2="48" stroke="#fbbf24" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="47" y1="38" x2="47" y2="49" stroke="#c47d00" stroke-width="1.6" stroke-linecap="round"/>
+</svg>
