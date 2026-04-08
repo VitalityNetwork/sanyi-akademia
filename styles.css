@@ -665,17 +665,25 @@ code {
 
 .prompt-body {
   padding: var(--s-4);
-  overflow-x: auto;
+  overflow-x: hidden;
+  min-width: 0;
 }
 
-.prompt-body pre {
+.prompt-body pre,
+.prompt-body code {
   margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
   font-family: var(--font-mono);
   font-size: 0.875rem;
   line-height: 1.6;
   color: var(--vg-text-normal);
   white-space: pre-wrap;
-  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  display: block;
 }
 
 .prompt-none {
@@ -1149,10 +1157,8 @@ code {
   .modal .prompt-header-label { font-size: 0.65rem; }
   .modal .prompt-copy { font-size: 0.7rem; padding: 5px 10px; }
   .modal .prompt-body { padding: var(--s-3); }
-  .modal .prompt-body pre {
-    white-space: pre-wrap;
-    word-break: break-word;
-    overflow-wrap: anywhere;
+  .modal .prompt-body pre,
+  .modal .prompt-body code {
     font-size: 0.78rem;
     line-height: 1.55;
   }
