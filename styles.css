@@ -1,5 +1,5 @@
 /* ============================================
-   SANYI AI AKADÉMIA — STYLES
+   CSILLA AI AKADÉMIA — STYLES
    Vitality Gym arculat
    ============================================ */
 
@@ -90,6 +90,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* Hide visible scrollbars everywhere — keep scroll functionality */
+html, body, .modal-card, .prompt-body, .lesson-body {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE / legacy Edge */
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.modal-card::-webkit-scrollbar,
+.prompt-body::-webkit-scrollbar,
+.lesson-body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;                /* Chrome, Safari, modern Edge */
 }
 
 /* Side stripes — Vitality mandatory element */
@@ -1106,11 +1121,48 @@ code {
   }
   .fab-label { display: none; }
 
-  .modal-card { padding: var(--s-6) var(--s-4); }
-  .modal-title { font-size: 1.25rem; }
+  /* Modal — fully responsive on mobile */
+  .modal { padding: var(--s-3); align-items: flex-start; }
+  .modal-card {
+    max-height: calc(100dvh - var(--s-6));
+    max-width: 100%;
+    padding: var(--s-6) var(--s-4);
+    border-radius: var(--r-md);
+    -webkit-overflow-scrolling: touch;
+  }
+  .modal-title { font-size: 1.2rem; padding-right: var(--s-10); line-height: 1.3; }
+  .modal-lead { font-size: 0.9rem; margin-bottom: var(--s-5); }
+  .modal-close {
+    width: 44px;
+    height: 44px;
+    top: var(--s-2);
+    right: var(--s-2);
+  }
+
+  /* SOS modal: prompt blocks must wrap, never overflow */
+  .modal .stuck-option { margin-bottom: var(--s-4); padding-bottom: var(--s-4); }
+  .modal .stuck-option h3 { font-size: 0.95rem; line-height: 1.35; }
+  .modal .stuck-howto { font-size: 0.82rem; padding: var(--s-3); }
+  .modal .stuck-howto code { font-size: 0.75rem; word-break: break-word; }
+  .modal .prompt-block { margin-top: var(--s-2); }
+  .modal .prompt-header { padding: var(--s-2) var(--s-3); flex-wrap: wrap; gap: var(--s-2); }
+  .modal .prompt-header-label { font-size: 0.65rem; }
+  .modal .prompt-copy { font-size: 0.7rem; padding: 5px 10px; }
+  .modal .prompt-body { padding: var(--s-3); }
+  .modal .prompt-body pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    font-size: 0.78rem;
+    line-height: 1.55;
+  }
 
   .welcome-stats { gap: var(--s-4); }
   .stat-number { font-size: 1.5rem; }
+  .welcome-card { padding: var(--s-8) var(--s-4) var(--s-6); }
+  .welcome-card h2 { font-size: 1.6rem; }
+  .welcome-lead { font-size: 0.95rem; }
+  .welcome-emoji { font-size: 3rem; }
 }
 
 @media (max-width: 480px) {

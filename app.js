@@ -1,5 +1,5 @@
 /* ============================================
-   SANYI AI AKADÉMIA — APP LOGIC
+   CSILLA AI AKADÉMIA — APP LOGIC
    ============================================ */
 
 (function () {
@@ -273,6 +273,15 @@
 
       playPop();
       launchConfetti(checkbox);
+
+      // Auto-collapse the lesson after a short delay (lets confetti play)
+      if (article.classList.contains('expanded')) {
+        const header = article.querySelector('.lesson-header');
+        setTimeout(() => {
+          article.classList.remove('expanded');
+          if (header) header.setAttribute('aria-expanded', 'false');
+        }, 550);
+      }
 
       // Check for phase completion
       const phaseId = parseInt(article.dataset.phaseId, 10);
