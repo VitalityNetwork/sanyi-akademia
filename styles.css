@@ -670,7 +670,9 @@ code {
 }
 
 .prompt-body pre,
-.prompt-body code {
+.prompt-body code,
+.prompt-box pre,
+.prompt-box code {
   margin: 0;
   padding: 0;
   background: transparent;
@@ -684,6 +686,27 @@ code {
   overflow-wrap: anywhere;
   max-width: 100%;
   display: block;
+}
+
+/* Modal stuck-modal prompt-box (different markup than lesson .prompt-block) */
+.prompt-box {
+  position: relative;
+  background: var(--vg-bg-prompt);
+  border: 1px solid var(--vg-border);
+  border-left: 4px solid var(--vg-gold);
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+  margin-top: var(--s-2);
+  overflow: hidden;
+}
+
+.prompt-box pre {
+  font-size: 0.85rem;
+}
+
+.prompt-box .prompt-copy {
+  margin-top: var(--s-3);
+  display: inline-block;
 }
 
 .prompt-none {
