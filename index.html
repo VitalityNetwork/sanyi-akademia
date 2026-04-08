@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sanyi AI Akadémia — interaktív tananyag a Claude Desktop, Claude Code, MCP szerverek, GitHub és Cloudflare használatáig." />
+  <meta name="theme-color" content="#000000" />
+
+  <title>Sanyi AI Akadémia · Vitality Gym</title>
+
+  <link rel="icon" type="image/png" href="https://vitalitygym.net/icons/icon-32x32.png" />
+  <link rel="apple-touch-icon" href="https://vitalitygym.net/icons/icon-180x180.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sanyi AI Akadémia" />
+  <meta property="og:description" content="Interaktív tananyag — Claude Desktop, Claude Code, MCP-k, GitHub és Cloudflare 30 nap alatt." />
+  <meta property="og:image" content="https://vitalitygym.net/logoapp.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Oxanium:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">
+      <img src="https://vitalitygym.net/logoapp.png" alt="VitalityGym" class="brand-logo" />
+      <div class="brand-text">
+        <span class="brand-wordmark">
+          <span class="vg-blue">VITALITY</span><span class="vg-red">GYM</span><sup class="vg-red">®</sup>
+        </span>
+        <span class="brand-sub">AI AKADÉMIA</span>
+      </div>
+    </div>
+    <h1 class="site-title">Sanyi AI Akadémia</h1>
+    <p class="site-tagline">Nulláról a saját élő weboldaladig — Claude-dal.</p>
+    <div class="tricolor-bar"></div>
+  </header>
+
+  <!-- Sticky Phase Navigation -->
+  <nav class="phase-nav" id="phase-nav" aria-label="Fázis navigáció">
+    <div class="phase-nav-inner">
+      <ol class="phase-dots" id="phase-dots" role="list"></ol>
+      <div class="phase-meta">
+        <span class="phase-meta-name" id="phase-meta-name">Fázis 0 — Indulás</span>
+        <span class="phase-meta-progress" id="phase-meta-progress">0/32 lecke · 0%</span>
+      </div>
+      <div class="phase-progress-track">
+        <div class="phase-progress-fill" id="phase-progress-fill"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="content" id="content">
+    <!-- Phases rendered by app.js -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-actions">
+      <button class="footer-btn" id="export-progress" type="button">📤 Progressz exportálása</button>
+      <button class="footer-btn" id="reset-progress" type="button">🔄 Újrakezdés</button>
+    </div>
+    <p class="footer-copy">© 2026 Vitality Gym · Sanyi AI Akadémia · Készült Claude Code-dal</p>
+  </footer>
+
+  <!-- "Stuck" Floating Action Button -->
+  <button class="fab-stuck" id="fab-stuck" type="button" aria-label="Elakadtam, kérek segítséget">
+    <span class="fab-icon">🆘</span>
+    <span class="fab-label">Elakadtam</span>
+  </button>
+
+  <!-- Stuck Modal -->
+  <div class="modal" id="stuck-modal" role="dialog" aria-modal="true" aria-labelledby="stuck-title" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close-modal aria-label="Bezárás">×</button>
+      <h2 id="stuck-title" class="modal-title">Elakadtál? Itt van három segédprompt.</h2>
+      <p class="modal-lead">Válaszd ki, melyik a helyzeted. Másold ki a promptot, illeszd be Claude-ba.</p>
+
+      <div class="stuck-option">
+        <h3>1. Nem értem ezt a leckét</h3>
+        <div class="prompt-box">
+          <pre><code id="stuck-prompt-1">Az alábbi leckét tanulom a Sanyi AI Akadémián, de van benne valami, amit nem értek.
+
+[ITT MÁSOLD BE A LECKE TARTALMÁT]
+
+Nem értem a következőt: [ÍRD LE PONTOSAN]
+
+Magyarázd el másképpen, egyszerűbben, egy konkrét hétköznapi példával. A végén kérdezz vissza, hogy érthető-e.</code></pre>
+          <button class="prompt-copy" data-copy-target="stuck-prompt-1">📋 Másolás</button>
+        </div>
+      </div>
+
+      <div class="stuck-option">
+        <h3>2. Hibaüzenetet kaptam</h3>
+        <div class="prompt-box">
+          <pre><code id="stuck-prompt-2">A következő hibaüzenetet kaptam a terminálban (vagy a Claude Code-ban):
+
+[ITT MÁSOLD BE A HIBÁT]
+
+Mit jelent ez magyarul, miért történt, és pontosan mit csináljak, hogy megoldjam? Lépésről lépésre, a legegyszerűbb megoldástól kezdve.</code></pre>
+          <button class="prompt-copy" data-copy-target="stuck-prompt-2">📋 Másolás</button>
+        </div>
+      </div>
+
+      <div class="stuck-option">
+        <h3>3. Készítek képernyőképet és azt mutatom</h3>
+        <p class="stuck-howto">
+          <strong>Mac billentyűkombináció:</strong><br>
+          <code>Cmd + Shift + 4</code> → kijelölöd a területet → kép a vágólapon<br>
+          Vagy <code>Cmd + Shift + 5</code> → opciók közül választasz<br><br>
+          Utána a Claude Desktop vagy Claude Code input mezőjébe: <code>Cmd + V</code> beillesztés.<br>
+          A kép alá írd:
+        </p>
+        <div class="prompt-box">
+          <pre><code id="stuck-prompt-3">Ez látszik nálam a képernyőn. Mondd el, mit látsz, mi a helyzet, és mit csináljak most. Magyarul, lépésről lépésre.</code></pre>
+          <button class="prompt-copy" data-copy-target="stuck-prompt-3">📋 Másolás</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome Modal -->
+  <div class="modal welcome-modal" id="welcome-modal" role="dialog" aria-modal="true" aria-labelledby="welcome-title" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-card welcome-card">
+      <div class="welcome-emoji">👋</div>
+      <h2 id="welcome-title">Szia Sanyi!</h2>
+      <p class="welcome-lead">
+        Ez egy interaktív tananyag, ami nulláról elvisz odáig, hogy önállóan építs weboldalakat és automatizmusokat AI-jal.
+      </p>
+      <div class="welcome-stats">
+        <div class="stat">
+          <span class="stat-number">7</span>
+          <span class="stat-label">fázis</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">32</span>
+          <span class="stat-label">lecke</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">~13</span>
+          <span class="stat-label">óra</span>
+        </div>
+      </div>
+      <p class="welcome-instructions">
+        Indítsd a Fázis 0-val, és pipáld be a leckéket ahogy haladsz. A progresszed automatikusan mentődik a böngésződben.
+      </p>
+      <button class="cta-button" id="welcome-start" type="button">🚀 Elindulok</button>
+    </div>
+  </div>
+
+  <!-- Phase Complete Overlay -->
+  <div class="phase-complete-overlay" id="phase-complete-overlay" hidden>
+    <div class="phase-complete-content">
+      <div class="phase-complete-checkmark">
+        <svg viewBox="0 0 80 80" width="80" height="80" aria-hidden="true">
+          <circle cx="40" cy="40" r="36" fill="#f59e0b" />
+          <path d="M22 42 L34 54 L58 28" stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        </svg>
+      </div>
+      <h2 class="phase-complete-title" id="phase-complete-title">🎉 Fázis 1 teljesítve!</h2>
+      <p class="phase-complete-sub" id="phase-complete-sub">Most már Claude Desktop felhasználó vagy.</p>
+      <button class="cta-button" id="phase-complete-close" type="button">Tovább a következő fázisra →</button>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Confetti Layer (full screen) -->
+  <div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
+
+  <!-- Scripts -->
+  <script src="data/curriculum.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
