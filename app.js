@@ -1,5 +1,5 @@
 /* ============================================
-   CSILLA AI AKADÉMIA — APP LOGIC
+   SANYI AI AKADÉMIA — APP LOGIC
    ============================================ */
 
 (function () {
@@ -158,7 +158,8 @@
       ])
     ]);
 
-    const arrow = el('span', { className: 'lesson-arrow', 'aria-hidden': 'true' }, '▾');
+    const arrow = el('span', { className: 'lesson-arrow', 'aria-hidden': 'true' });
+    arrow.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
     header.appendChild(checkbox);
     header.appendChild(meta);

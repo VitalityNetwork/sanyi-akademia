@@ -1,5 +1,5 @@
 /* ============================================
-   CSILLA AI AKADÉMIA — STYLES
+   SANYI AI AKADÉMIA — STYLES
    Vitality Gym arculat
    ============================================ */
 
@@ -545,17 +545,54 @@ code {
   flex-shrink: 0;
   width: 32px;
   height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--vg-gold), var(--vg-gold-dark));
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--vg-text-muted);
-  font-size: 1.25rem;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--t-base), box-shadow var(--t-base);
+  animation: pulse-glow-arrow 2.5s infinite;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+}
+
+.lesson-arrow svg {
+  width: 16px;
+  height: 16px;
+  display: block;
   transition: transform var(--t-base);
 }
 
+.lesson-arrow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.7);
+  animation-play-state: paused;
+}
+
 .lesson.expanded .lesson-arrow {
+  animation: none;
+  box-shadow: 0 2px 12px rgba(245, 158, 11, 0.5);
+}
+
+.lesson.expanded .lesson-arrow svg {
   transform: rotate(180deg);
-  color: var(--vg-gold);
+}
+
+@keyframes pulse-glow-arrow {
+  0% {
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4),
+                0 0 0 0 rgba(245, 158, 11, 0.7);
+  }
+  70% {
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4),
+                0 0 0 12px rgba(245, 158, 11, 0);
+  }
+  100% {
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4),
+                0 0 0 0 rgba(245, 158, 11, 0);
+  }
 }
 
 /* Lesson Body (accordion content) */

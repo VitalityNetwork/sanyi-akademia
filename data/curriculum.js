@@ -37,15 +37,25 @@ const CURRICULUM = [
       },
       {
         id: "0.3",
-        title: "Beszélj angolul Claude-dal — hangos diktálás",
-        tagline: "Gyorsabb és kényelmesebb, mint gépelni. És magyarul válaszol vissza.",
+        title: "Magyar hangos diktálás — Vitality Writer",
+        tagline: "Gyorsabb és pontosabb, mint gépelni. Mobilon és gépen egyaránt.",
         time: 10,
         difficulty: "easy",
-        what: "Bekapcsolod a macOS hangdiktálást angolul, és innentől kezdve Claude-ot a hangoddal vezérled. Te beszélsz angolul, ő válaszol magyarul (mert így kéred).",
-        how: "1. <strong>System Settings → Keyboard → Dictation</strong> → bekapcsolás<br>2. Language: <code>English (US)</code> (vagy hozzáad Add gombbal)<br>3. Shortcut: <code>Press Fn (Globe) key twice</code><br>4. Nyisd meg a Claude Desktop appot, kattints az input mezőbe<br>5. Nyomd meg a <code>Fn</code> billentyűt kétszer gyorsan — megjelenik a mikrofon ikon<br>6. Beszélj angolul, ami eszedbe jut<br>7. Claude magyarul válaszol (az első prompt ezt fogja beállítani)",
-        why: "<strong>Három fontos dolog miatt:</strong> 1. Sokkal gyorsabb mint gépelni. 2. Angolul Claude pontosabban ért. 3. Kényelmesebb — nem fárad a szemed, beszélgethetsz vele séta közben is.",
-        example: "Próbáld ki most: nyisd meg Claude Desktopot, dupla Fn, mondd angolul: <em>\"Hi Claude, tell me in three sentences what you can help me with as a small business owner.\"</em> — és figyeld, milyen gyorsan válaszol.",
-        prompt: `Hi Claude, from now on I will mostly talk to you using my voice in English. Please always answer me in Hungarian unless I explicitly ask otherwise. Confirm you understood, and then ask me: what is the most important thing I want to achieve this week?`
+        what: "A <strong>Vitality Writer</strong> egy webes diktáló alkalmazás, amit Laci épített kifejezetten <strong>magyar nyelvre</strong>. ElevenLabs Scribe v1 motort használ, ami a legjobb magyar nyelvű hangfelismerés a piacon. Ezzel beszélni fogsz Claude-hoz, nem gépelni — magyarul, pontosan, gyorsan.",
+        how: "1. Nyisd meg a <a href=\"https://vitality-writer.pages.dev\" target=\"_blank\" rel=\"noopener\"><strong>vitality-writer.pages.dev</strong></a> oldalt (mobilon vagy számítógépen, mindegy)<br>2. Regisztrálj az email címeddel (ingyenes)<br>3. Próbáld nyugodtan használni — kattints a felvétel gombra, mondd el amit szeretnél<br>4. Amit elmondtál, megjelenik szövegként — másold ki, illeszd be Claude Desktopba<br>5. <strong>Ha bármi kérdésed van</strong> a használattal, hozzáféréssel, kvótával kapcsolatban: <strong>jelezd Lacinak</strong> a megszokott csatornán (vagy email: <a href=\"mailto:laci.gla.mail@gmail.com?subject=Vitality%20Writer%20kérdés\">laci.gla.mail@gmail.com</a>)",
+        why: "<strong>Három fontos ok miatt:</strong><br>1. <strong>A számítógépek beépített diktáló funkciója nem elég jó</strong> — főleg magyar nyelven nem. Sok hibát ejt, lassú, és állandóan javítani kell utána.<br>2. A Vitality Writer ezzel szemben pont magyarra van optimalizálva, és kimagaslóan pontos.<br>3. <strong>Mobilon is működik</strong> — séta közben, autóban, pihenésben is tudsz dolgozni Claude-dal, nem kell a gép elé ülnöd.",
+        example: "Próbáld ki ma: nyisd meg <a href=\"https://vitality-writer.pages.dev\" target=\"_blank\" rel=\"noopener\">vitality-writer.pages.dev</a>-t a telefonodon, regisztrálj, mondd el hangosan a holnapi posztötleted, másold át a szöveget Claude Desktopba, és kérd meg, hogy formálja meg posztra. Ennyi az egész — gépelés nélkül.",
+        prompt: `Vedd fel velem a kapcsolatot a Vitality Writer használatával kapcsolatban!
+
+Email: laci.gla.mail@gmail.com
+Tárgy: Vitality Writer — segítség / hozzáférés
+
+Írd meg röviden:
+- Sikerült-e regisztrálni
+- Mit szeretnél kérdezni vagy mire van szükséged
+- Mobilon vagy számítógépen szeretnéd-e használni elsősorban
+
+Laci segít beüzemelni és megmutatja, hogyan tudod a leghatékonyabban használni a Claude-dal együtt.`
       }
     ]
   },
@@ -111,7 +121,7 @@ const CURRICULUM = [
         time: 15,
         difficulty: "easy",
         what: "Egy jó mappastruktúra a gépeden órákat spórol meg hetente. Claude kérdez végig, és épít neked egy logikus, áttekinthető rendszert a tevékenységed alapján.",
-        how: "1. Nyisd meg Claude Desktopot<br>2. Másold be a lenti promptot<br>3. Válaszolj a kérdéseire (mivel foglalkozol, milyen anyagaid vannak, hogyan szeretnéd a rendet)<br>4. Kapsz egy fa-szerkezetű tervet<br>5. A Finder-ben építsd meg — vagy kérd meg Claude-ot, hogy írjon egy shell scriptet, ami létrehozza (ezt később fogod tudni csinálni a 3. fázisban)",
+        how: "1. Nyisd meg Claude Desktopot<br>2. Másold be a lenti promptot<br>3. Válaszolj a kérdéseire (mivel foglalkozol, milyen anyagaid vannak, hogyan szeretnéd a rendet)<br>4. Kapsz egy fa-szerkezetű tervet<br>5. A Fájlkezelőben (File Explorer) építsd meg — vagy kérd meg Claude-ot, hogy írjon egy shell scriptet, ami létrehozza (ezt később fogod tudni csinálni a 3. fázisban)",
         why: "A rendetlen mappa lassít és stresszel. A rendezett mappa = gyors keresés, átlátható munka, és később a Claude Code is ebben a struktúrában fog dolgozni.",
         example: "Egy marketing vállalkozó tipikus struktúrája: <br><code>Documents/<br>├── Ügyfelek/<br>│   ├── Aktív/<br>│   └── Archív/<br>├── Marketing/<br>│   ├── Posztok/<br>│   └── Képek/<br>├── Pénzügyek/<br>└── Sablonok/</code>",
         prompt: `Segíts megtervezni egy profi mapparendszert a számítógépemre. Kérdezz végig a következőkről, egyesével, nem egyszerre:
@@ -241,7 +251,7 @@ Utána készíts egy SVG kódot. Mutasd meg az előnézetet. Ha nem tetszik, dol
         time: 12,
         difficulty: "medium",
         what: "A <code>CLAUDE.md</code> egy egyszerű szöveges fájl, amit Claude <strong>minden új beszélgetés elején automatikusan elolvas</strong>, ha a megfelelő helyre teszed. Ez a te állandó 'bemutatkozásod' Claude-nak — soha többet nem kell elmagyaráznod alapokat.",
-        how: "1. Nyisd meg Claude Desktopot és másold be a lenti promptot<br>2. Válaszolj a kérdésekre<br>3. Claude készít egy kész CLAUDE.md szöveget<br>4. Hozz létre egy új szöveges fájlt (TextEdit → Format → Make Plain Text), mentsd <code>CLAUDE.md</code> néven<br>5. Tedd a felhasználói mappádba: <code>~/CLAUDE.md</code> (a ~ a te user mappád)<br>6. Ettől kezdve a Claude Code automatikusan beolvassa — a Projects-ben pedig feltöltheted a knowledge-be",
+        how: "1. Nyisd meg Claude Desktopot és másold be a lenti promptot<br>2. Válaszolj a kérdésekre<br>3. Claude készít egy kész CLAUDE.md szöveget<br>4. Hozz létre egy új szöveges fájlt a Jegyzettömbbel (Notepad) — fontos, hogy egyszerű szöveg (.txt) formátumban mentsd, és nevezd át <code>CLAUDE.md</code>-re<br>5. Tedd a felhasználói mappádba: <code>C:\\Users\\&lt;a-te-neved&gt;\\CLAUDE.md</code><br>6. Ettől kezdve a Claude Code automatikusan beolvassa — a Projects-ben pedig feltöltheted a knowledge-be",
         why: "Normál beszélgetésnél 10 perc elmagyarázni, ki vagy. A CLAUDE.md-vel 0 perc, örökre. És a Claude Code (terminálban futó verzió) mindig ebből indul ki — ez lesz a 3. fázistól az alap.",
         example: "Példa CLAUDE.md részlet: <br><code>Sanyi vagyok, Spanyolországban élek, X-szel foglalkozom. Mindig magyarul válaszolj. Ne kezdj 'Remek kérdés!'-sel. Rövid mondatokban dolgozz. Ha nem vagy biztos, mondd meg. A vállalkozásom neve: [...]</code>",
         prompt: `Készítsünk együtt egy CLAUDE.md fájlt, ami a jövőben minden beszélgetésünk elején megadja neked a kontextust rólam. Kérdezz végig (egyesével):
@@ -270,30 +280,30 @@ A válaszok után írj egy kész CLAUDE.md dokumentumot Markdown formátumban, s
         tagline: "Egy percben, sallang nélkül.",
         time: 5,
         difficulty: "easy",
-        what: "A terminál egy szöveges ablak, amibe parancsokat írsz, és a gép végrehajtja őket. Ez a legközvetlenebb kapcsolat a számítógéped és te közted. A Claude Code itt fut — ezért kell ismerned.",
-        how: "<strong>Megnyitás Mac-en:</strong> <code>Cmd + Space</code> → írd be: <code>Terminal</code> → Enter. Megjelenik egy fekete (vagy fehér) ablak szöveggel. Ez az.",
+        what: "A terminál egy szöveges ablak, amibe parancsokat írsz, és a gép végrehajtja őket. Ez a legközvetlenebb kapcsolat a számítógéped és te közted. A Claude Code itt fut — ezért kell ismerned. Windows-on a <strong>Windows Terminal</strong> vagy <strong>PowerShell</strong> a megfelelő eszköz.",
+        how: "<strong>Megnyitás Windows-on:</strong> Nyomd meg a <code>Win</code> billentyűt → írd be: <code>Windows Terminal</code> (vagy <code>powershell</code>) → Enter. Megjelenik egy sötét hátterű ablak szöveggel. Ez az. <br><br>Ha nincs Windows Terminal: a <strong>PowerShell</strong> ugyanolyan jó, az minden Windows-ra előre fel van telepítve.",
         why: "A terminál nem ijesztő, csak szokatlan. Mindent, amit eddig kattintással csináltál, itt szövegesen is tudsz — de sokkal gyorsabban, automatizálhatóan, és a Claude Code innen fog neked valódi alkalmazásokat építeni.",
-        example: "Nyisd meg a Terminált most. Látsz egy szöveget és utána egy kurzort villogni. Ez minden. Semmit ne írj még — csak zárd be. Megtetted az első lépést.",
+        example: "Nyisd meg most a PowerShell-t (Win billentyű → 'powershell' → Enter). Látsz egy szöveget és utána egy villogó kurzort. Ez minden. Semmit ne írj még — csak zárd be. Megtetted az első lépést.",
         prompt: null
       },
       {
         id: "3.2",
-        title: "Homebrew telepítése (egy parancs)",
-        tagline: "A Mac csomagkezelője. Nélküle nem megy tovább.",
-        time: 10,
-        difficulty: "medium",
-        what: "A Homebrew egy olyan program, amivel más programokat tudsz egyszerűen telepíteni a Mac-re. Ez kell a Node.js-hez, ami kell a Claude Code-hoz. Egyetlen sor, egy telepítés.",
-        how: "1. Nyisd meg a Terminál-t<br>2. Másold be ezt a sort és nyomj Entert:<br><code>/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"</code><br>3. Kérni fogja a jelszavadat — a Mac felhasználói jelszavad (gépelés közben nem látszik, ez normális)<br>4. Várj 2-5 percet, amíg letölt és telepít<br>5. A végén kiírja, mit csinálj (pl. <code>Add Homebrew to your PATH</code>) — <strong>csak másold be és futtasd</strong>, amit javasol",
-        why: "Homebrew nélkül minden további telepítés nehéz. Ezzel pedig bármelyik programot egyetlen <code>brew install [név]</code> paranccsal felrakod.",
-        example: "Telepítés után ellenőrizd, hogy megy: <code>brew --version</code> — ha kiír egy verziószámot (pl. <code>Homebrew 4.x.x</code>), sikerült.",
-        prompt: `Segíts telepíteni a Homebrew-t a Mac-emre. Írd le lépésről lépésre:
-1. Hogyan nyissam meg a Terminál-t
-2. Pontosan melyik parancsot másoljam be (add meg a hivatalos Homebrew telepítő parancsot)
-3. Mit fogok látni futás közben, miért kéri a jelszavamat
-4. Mit csináljak, ha valami hibát ír
-5. Hogyan ellenőrizzem, hogy sikerült-e
+        title: "winget — a Windows beépített csomagkezelője",
+        tagline: "Egy paranccsal telepítesz bármilyen programot. Nélküle nem megy tovább.",
+        time: 8,
+        difficulty: "easy",
+        what: "A <code>winget</code> a Windows 10/11 beépített csomagkezelője. Egy paranccsal letölt és telepít programokat — nem kell böngészőzni, telepítőt keresni, kattintgatni. Erre lesz szükséged a Node.js telepítéséhez (és sok minden máshoz a jövőben).",
+        how: "1. Nyisd meg a PowerShell-t (Win billentyű → 'powershell' → Enter)<br>2. Ellenőrzés: gépeld be: <code>winget --version</code><br>3. Ha kiír egy verziószámot (pl. <code>v1.x.x</code>), kész — Windows 10/11-en alapból ott van<br>4. Ha azt írja: <em>'A winget kifejezés nem ismerhető fel...'</em> → nyisd meg a Microsoft Store-t, keress rá: <strong>App Installer</strong>, telepítsd, és próbáld újra",
+        why: "winget nélkül minden további telepítést kézzel kell csinálnod (letöltés → kattintgatás a varázslóban → újraindítás). winget-tel egy sor és kész.",
+        example: "Próbálj kilistázni egy ismerős programot: <code>winget search node</code> — felsorolja a Node.js elérhető verzióit. Még nem telepítjük, csak megnézzük, hogy működik.",
+        prompt: `Segíts ellenőrizni, hogy a winget telepítve van-e a Windows számítógépemen. Lépésről lépésre, magyarul:
+1. Hogyan nyissam meg a PowerShell-t
+2. Milyen parancsot írjak be a verzió ellenőrzéséhez
+3. Mit jelent a kimenet, ha működik
+4. Mit csináljak, ha NEM ismeri fel a winget parancsot (App Installer telepítése Microsoft Store-ból)
+5. Hogyan kereshetek programokat winget-tel
 
-Magyarul válaszolj, és feltételezd, hogy most fogom először megnyitni a Terminál-t.`
+A válasz legyen magyar, kezdőnek érthetően.`
       },
       {
         id: "3.3",
@@ -301,16 +311,17 @@ Magyarul válaszolj, és feltételezd, hogy most fogom először megnyitni a Ter
         tagline: "Ez a Claude Code futtatókörnyezete.",
         time: 8,
         difficulty: "easy",
-        what: "A Node.js egy program, ami JavaScript kódot futtat a gépeden. A Claude Code Node.js-en fut — ezért kell. Homebrew-val egyetlen sor a telepítés.",
-        how: "1. Nyisd meg a Terminál-t<br>2. Írd be: <code>brew install node</code><br>3. Várj 1-3 percet<br>4. Ellenőrzés: <code>node --version</code> — ha kiír valami ilyesmit: <code>v22.x.x</code>, kész",
+        what: "A Node.js egy program, ami JavaScript kódot futtat a gépeden. A Claude Code Node.js-en fut — ezért kell. winget-tel egyetlen sor a telepítés.",
+        how: "1. Nyisd meg a PowerShell-t<br>2. Írd be: <code>winget install OpenJS.NodeJS.LTS</code><br>3. Ha rákérdez, hogy elfogadod-e a feltételeket, írd be: <code>Y</code> és Enter<br>4. Várj 1-3 percet, amíg letölti és telepíti<br>5. <strong>Zárd be és nyisd meg újra a PowerShell-t</strong> (hogy frissüljön a környezet)<br>6. Ellenőrzés: <code>node --version</code> — ha kiír valami ilyesmit: <code>v22.x.x</code>, kész",
         why: "Ez csak egy alapkő — telepíted egyszer, és soha nem kell többé gondolkodnod róla. Innentől a Claude Code és minden modern webfejlesztés megy rajta.",
-        example: "Ellenőrzés sikeres állapotban: <br><code>$ node --version</code><br><code>v22.11.0</code><br><code>$ npm --version</code><br><code>10.9.0</code>",
-        prompt: `Telepítsd nekem a Node.js-t Homebrew-val. Adj egy lépésről lépésre útmutatót:
-1. Melyik parancsot másoljam be a Terminál-ba
+        example: "Ellenőrzés sikeres állapotban: <br><code>PS C:\\&gt; node --version</code><br><code>v22.11.0</code><br><code>PS C:\\&gt; npm --version</code><br><code>10.9.0</code>",
+        prompt: `Telepítsd nekem a Node.js-t winget-tel a Windows számítógépemre. Adj egy lépésről lépésre útmutatót:
+1. Melyik winget parancsot másoljam be a PowerShell-be
 2. Mennyi ideig fog tartani
-3. Hogyan ellenőrzöm, hogy a node és az npm is működik
-4. Mit csináljak, ha a 'command not found' hibát kapom
-5. Mi az az npm egyébként és miért van automatikusan mellette
+3. Miért kell utána újraindítani a PowerShell-t
+4. Hogyan ellenőrzöm, hogy a node és az npm is működik
+5. Mit csináljak, ha a 'node nem ismerhető fel parancs' hibát kapom
+6. Mi az az npm egyébként és miért van automatikusan mellette
 
 A válasz legyen magyar és nagyon közérthető.`
       },
@@ -321,37 +332,37 @@ A válasz legyen magyar és nagyon közérthető.`
         time: 15,
         difficulty: "medium",
         what: "A Claude Code egy olyan Claude, ami <strong>közvetlenül a gépeden dolgozik</strong> — olvas, ír, létrehoz fájlokat, futtat parancsokat. Ez lesz a fő munkaeszközöd, amikor valódi dolgokat építesz.",
-        how: "1. Terminál-ba: <code>npm install -g @anthropic-ai/claude-code</code><br>2. Várj 1-2 percet<br>3. Indítsd el: <code>claude --dangerously-skip-permissions</code><br>4. Első futtatáskor megkérdezi: melyik Claude fiókoddal akarsz bejelentkezni — kattints, böngésző megnyitja, bejelentkezés<br>5. Vissza a terminál-ba — ott vagy a Claude Code promptban<br>6. Írj valamit, pl.: <em>\"Hozz létre egy hello.html fájlt, ami köszön engem Sanyinak\"</em>",
+        how: "1. PowerShell-be: <code>npm install -g @anthropic-ai/claude-code</code><br>2. Várj 1-2 percet<br>3. Indítsd el: <code>claude --dangerously-skip-permissions</code><br>4. Első futtatáskor megkérdezi: melyik Claude fiókoddal akarsz bejelentkezni — kattints, a böngésző megnyitja, bejelentkezés<br>5. Vissza a PowerShell-be — ott vagy a Claude Code promptban<br>6. Írj valamit, pl.: <em>\"Hozz létre egy hello.html fájlt, ami köszön engem Sanyinak\"</em>",
         why: "<strong>A `--dangerously-skip-permissions` flag</strong> azért kell, hogy Claude ne kérdezzen vissza minden egyes lépésnél. Enélkül állandóan meg kell erősítened, hogy mindent csinálhat — és akkor hosszú feladatoknál elvesztegetsz órákat. Ezzel megy folyamatosan, és te a haladást látod.",
         example: "Első Claude Code feladat: <em>\"Hozz létre egy új mappát <code>teszt</code>, abba egy <code>index.html</code> fájlt, ami Bootstrap-pel fejléccel, egy bemutatkozó bekezdéssel, és egy email gombbal. Nyisd meg utána a böngészőmben.\"</em> — és figyeled, ahogy építi meg.",
-        prompt: `Segíts telepíteni a Claude Code-ot a Mac-emre. Lépésről lépésre, magyarul:
-1. Melyik npm parancsot használjam a telepítéshez
+        prompt: `Segíts telepíteni a Claude Code-ot a Windows számítógépemre. Lépésről lépésre, magyarul:
+1. Melyik npm parancsot használjam a telepítéshez (PowerShell-ben futtatom)
 2. Hogyan indítsam el először, és mi az a --dangerously-skip-permissions flag, miért használjuk
 3. Hogyan jelentkezzek be (mit fogok látni a böngészőben)
 4. Milyen legyen az első feladat, amit kipróbálok vele (adj 3 konkrét, egyszerű ötletet)
-5. Mit csináljak, ha valami nem megy
+5. Mit csináljak, ha valami nem megy (pl. PowerShell execution policy hiba)
 
 A végén mondd el, mi a különbség a Claude Desktop és a Claude Code között, egyszerűen.`
       },
       {
         id: "3.5",
-        title: "Írass magadnak scripteket — terminál mint asszisztens",
+        title: "Írass magadnak scripteket — PowerShell mint asszisztens",
         tagline: "Ne kézzel írj parancsokat. Claude írja, te futtatod.",
         time: 15,
         difficulty: "medium",
-        what: "A terminálban sok parancs van, amit nem kell fejből tudnod. A stratégia: <strong>kérd meg Claude Desktop-ot vagy Claude Code-ot, hogy írjon neked egy scriptet</strong>, ami elvégzi amit akarsz — te csak lefuttatod egy új terminál ablakban vagy ugyanabban.",
-        how: "1. Claude Desktop-ba: mondd el mit akarsz (pl. \"napi backup a Documents mappámról egy külső meghajtóra\")<br>2. Claude írni fog egy bash scriptet (szöveges kód)<br>3. Kérd meg: <em>\"Adj egy lépésről lépésre útmutatót, hogyan mentsem el és futtassam le\"</em><br>4. Új terminál tab: <code>Cmd + T</code> — ide futtathatod anélkül, hogy a Claude Code-ot megzavarnád<br>5. Futtatás: <code>bash backup.sh</code> (vagy amit mond)",
-        why: "Sosem kell fejből tudnod bash parancsokat. Claude profi bennük. Te csak leírod mit akarsz elérni, ő írja a receptet, te végrehajtod. Ez egy tanulási ciklus is — idővel ráérzel, melyik parancs mit csinál.",
-        example: "Példa feladat: <em>\"Írj egy scriptet, ami a Letöltések mappából átmozgatja az összes .pdf fájlt a Documents/PDF-ek mappába.\"</em> — Claude írja, te Entert nyomsz, 1 másodperc alatt lefut.",
-        prompt: `Szükségem van egy bash scriptre, ami a következőt csinálja:
+        what: "A PowerShell-ben sok parancs van, amit nem kell fejből tudnod. A stratégia: <strong>kérd meg Claude Desktop-ot vagy Claude Code-ot, hogy írjon neked egy PowerShell scriptet</strong>, ami elvégzi amit akarsz — te csak lefuttatod.",
+        how: "1. Claude Desktop-ba: mondd el mit akarsz (pl. \"napi backup a Dokumentumok mappámról egy külső meghajtóra\")<br>2. Claude írni fog egy PowerShell scriptet (szöveges kód, <code>.ps1</code> kiterjesztéssel)<br>3. Kérd meg: <em>\"Adj egy lépésről lépésre útmutatót, hogyan mentsem el és futtassam le Windows-on\"</em><br>4. Új PowerShell tab: a Windows Terminal-ban kattints a felső <strong>+</strong> ikonra, vagy nyomj <code>Ctrl + Shift + T</code> — ide futtathatod anélkül, hogy a Claude Code-ot megzavarnád<br>5. Futtatás: <code>powershell -ExecutionPolicy Bypass -File backup.ps1</code> (vagy amit Claude mond)",
+        why: "Sosem kell fejből tudnod PowerShell parancsokat. Claude profi bennük. Te csak leírod mit akarsz elérni, ő írja a receptet, te végrehajtod. Ez egy tanulási ciklus is — idővel ráérzel, melyik parancs mit csinál.",
+        example: "Példa feladat: <em>\"Írj egy PowerShell scriptet, ami a Letöltések (Downloads) mappából átmozgatja az összes .pdf fájlt a Dokumentumok\\PDF-ek mappába.\"</em> — Claude írja, te Entert nyomsz, 1 másodperc alatt lefut.",
+        prompt: `Szükségem van egy PowerShell scriptre Windows-ra, ami a következőt csinálja:
 
 [ITT ÍRD LE, MIT AKARSZ — pl. napi backup, fájlok rendezése, tömörítés, méret átalakítás]
 
 Csináld a következőket:
 1. Kérdezd vissza, ha valami nem tiszta (pl. pontos mappa útvonalak, gyakoriság)
-2. Írd meg a scriptet, kommentekkel magyarul, hogy értsem mit csinál
-3. Magyarázd el, hogyan mentsem el egy .sh fájlba
-4. Mondd el, hogyan futtassam le a terminálból (bash parancs)
+2. Írd meg a PowerShell scriptet, kommentekkel magyarul, hogy értsem mit csinál
+3. Magyarázd el, hogyan mentsem el egy .ps1 fájlba (Notepad-ben)
+4. Mondd el, hogyan futtassam le PowerShell-ből (pontos parancs, ExecutionPolicy figyelmeztetésekkel együtt)
 5. Emeld ki, ha van bármi kockázat (pl. ha fájlokat mozgat vagy töröl)
 
 Magyarul, kezdőnek érthetően.`
@@ -384,7 +395,7 @@ Magyarul, kezdőnek érthetően.`
         time: 15,
         difficulty: "medium",
         what: "A Filesystem MCP engedélyt ad Claude-nak, hogy <strong>olvassa, írja, szerkessze a fájljaidat egy kijelölt mappában</strong>. Ez a leggyakoribb MCP, és a legtöbbet fogod használni.",
-        how: "1. Claude Desktop → <strong>Settings → Developer → Edit Config</strong><br>2. Megnyílik egy JSON fájl (<code>claude_desktop_config.json</code>)<br>3. Illeszd be ezt a részt az <code>mcpServers</code> alá:<br><code>\"filesystem\": {<br>&nbsp;&nbsp;\"command\": \"npx\",<br>&nbsp;&nbsp;\"args\": [\"-y\", \"@modelcontextprotocol/server-filesystem\", \"/Users/sanyi/Documents\"]<br>}</code><br>4. Cseréld a <code>sanyi</code>-t a saját felhasználói nevedre<br>5. Mentsd, zárd be és indítsd újra Claude Desktop-ot<br>6. Teszt: <em>\"Listázd a Documents mappám tartalmát\"</em>",
+        how: "1. Claude Desktop → <strong>Settings → Developer → Edit Config</strong><br>2. Megnyílik egy JSON fájl (<code>claude_desktop_config.json</code>)<br>3. Illeszd be ezt a részt az <code>mcpServers</code> alá (Windows formátum, dupla backslash kötelező a JSON-ban):<br><code>\"filesystem\": {<br>&nbsp;&nbsp;\"command\": \"npx\",<br>&nbsp;&nbsp;\"args\": [\"-y\", \"@modelcontextprotocol/server-filesystem\", \"C:\\\\Users\\\\Sanyi\\\\Documents\"]<br>}</code><br>4. Cseréld a <code>Sanyi</code>-t a saját Windows felhasználói nevedre (a pontos név itt van: <code>C:\\Users</code> mappa nézete a Fájlkezelőben)<br>5. Mentsd, zárd be és indítsd újra Claude Desktop-ot<br>6. Teszt: <em>\"Listázd a Documents mappám tartalmát\"</em>",
         why: "A Filesystem MCP megspórolja a fel-le töltést. Claude közvetlenül eléri a fájljaidat, dolgozik rajtuk, és az új verziót mentődik — nincs többet drag & drop, nincs letöltés.",
         example: "Kérj: <em>\"Nézz rá a Documents mappám tartalmára, mondd el mit látsz, és javasolj egy rendrakást.\"</em> — Claude megnézi, elemzi, javaslatokat tesz.",
         prompt: `Segíts telepíteni a Filesystem MCP-t a Claude Desktop-omban. Lépésről lépésre, magyarul:
@@ -612,7 +623,7 @@ Answer me in Hungarian throughout the conversation, even though I'm speaking Eng
         time: 60,
         difficulty: "medium",
         what: "A <code>plan.md</code>-t átadod Claude Code-nak, és ő pontosan a terv alapján megépíti az oldalt. Ha valami nem tetszik, screenshot-tal kérsz változtatást. Iteráció, amíg elégedett vagy.",
-        how: "1. Új terminál ablak: <code>cd ~/Documents</code> → <code>mkdir rolam-oldal</code> → <code>cd rolam-oldal</code><br>2. Tedd be ide a <code>plan.md</code>-t<br>3. Indítsd: <code>claude --dangerously-skip-permissions</code><br>4. Első prompt: <em>\"Read plan.md carefully and build the entire About Me page following it exactly. Use vanilla HTML, CSS, and JavaScript. When done, open it in my browser.\"</em><br>5. Hagyd dolgozni — közben nézed mit csinál<br>6. Amikor kész: megnézed a böngészőben<br>7. Ha valami nem tetszik: képernyőkép (<code>Cmd+Shift+4</code>) → beillesztés Claude Code-ba → leírod mit változtasson",
+        how: "1. Új PowerShell ablak: <code>cd $HOME\\Documents</code> → <code>mkdir rolam-oldal</code> → <code>cd rolam-oldal</code><br>2. Tedd be ide a <code>plan.md</code>-t<br>3. Indítsd: <code>claude --dangerously-skip-permissions</code><br>4. Első prompt: <em>\"Read plan.md carefully and build the entire About Me page following it exactly. Use vanilla HTML, CSS, and JavaScript. When done, open it in my browser.\"</em><br>5. Hagyd dolgozni — közben nézed mit csinál<br>6. Amikor kész: megnézed a böngészőben<br>7. Ha valami nem tetszik: képernyőkép (<code>Win + Shift + S</code>) → beillesztés Claude Code-ba (<code>Ctrl + V</code>) → leírod mit változtasson",
         why: "Ez az a pont, ahol <strong>minden korábbi lecke összeáll</strong>. Terminál, Claude Code, terv, iteráció — és a végén van egy saját oldalad. Nem olvastál róla, nem elméleti — megcsináltad.",
         example: "Iterációs példa: az oldal kész, de a fejléc színe nem tetszik. Csinálj egy screenshotot, húzd be Claude Code-ba: <em>\"A fejléc színe most túl élénk, szeretnék egy visszafogottabb árnyalatot — valami melegebb barnás tónust. Frissítsd.\"</em> — Claude átírja, frissítsd a böngészőt, látod a változást.",
         prompt: `Olvasd el a plan.md fájlt, amit a mappában találsz. Utána építsd meg pontosan az oldalt, a tervben leírtak szerint. Használj tiszta HTML, CSS és JavaScript kódot (semmi framework). A kód legyen:
